@@ -15,8 +15,8 @@
 | 2 | Ingestion | ✅ | `documents.jsonl` создан |
 | 3 | Chunking | ✅ | `chunks.jsonl`, тест chunking |
 | 4 | Индекс TF-IDF | ✅ | файлы в `data/index/` |
-| 5 | Retrieval | ⬜ | top-k + score в консоли |
-| 6 | Demo-ответ | ⬜ | ответ + источники без UI |
+| 5 | Retrieval | ✅ | top-k + score в консоли |
+| 6 | Demo-ответ | ✅ | ответ + источники без UI |
 | 7 | Streamlit UI | ⬜ | 3 demo-вопроса в браузере |
 | 8 | Тесты и README | ⬜ | `pytest` green, README воспроизводим |
 | 9 | Документ о данных и репозитории | ⬜ | `doc/DATA.md` — источники, назначение |
@@ -24,8 +24,8 @@
 
 **Легенда:** ⬜ не начато · 🔄 в работе · ✅ готово · ❌ блокер
 
-**Текущая итерация:** 5  
-**Готовность MVP:** 5 / 11
+**Текущая итерация:** 7  
+**Готовность MVP:** 7 / 11
 
 ---
 
@@ -98,8 +98,8 @@ uv run python scripts/build_index.py
 
 ## Итерация 5 — Retrieval
 
-- [ ] `app/retriever.py` — загрузка индекса, cosine top-k
-- [ ] Возврат: `text`, `doc_id`, `score`
+- [x] `app/retriever.py` — загрузка индекса, cosine top-k
+- [x] Возврат: `text`, `doc_id`, `score`
 
 **Проверка:**
 ```bash
@@ -114,8 +114,8 @@ print(r.search('безработица переменные', k=3))
 
 ## Итерация 6 — Demo-ответ
 
-- [ ] `app/prompts.py` — system-правила (только по контексту, отказ без данных)
-- [ ] `app/generator.py` — ответ из top-k + список источников
+- [x] `app/prompts.py` — system-правила (только по контексту, отказ без данных)
+- [x] `app/generator.py` — ответ из top-k + список источников
 
 **Проверка:**
 ```bash
