@@ -13,7 +13,7 @@
 | 0 | Каркас проекта | ✅ | `uv sync` без ошибок |
 | 1 | Демо-данные Kaggle | ✅ | JSON читается, ≥5 датасетов |
 | 2 | Ingestion | ✅ | `documents.jsonl` создан |
-| 3 | Chunking | ⬜ | `chunks.jsonl`, тест chunking |
+| 3 | Chunking | ✅ | `chunks.jsonl`, тест chunking |
 | 4 | Индекс TF-IDF | ⬜ | файлы в `data/index/` |
 | 5 | Retrieval | ⬜ | top-k + score в консоли |
 | 6 | Demo-ответ | ⬜ | ответ + источники без UI |
@@ -24,8 +24,8 @@
 
 **Легенда:** ⬜ не начато · 🔄 в работе · ✅ готово · ❌ блокер
 
-**Текущая итерация:** 3  
-**Готовность MVP:** 3 / 11
+**Текущая итерация:** 4  
+**Готовность MVP:** 4 / 11
 
 ---
 
@@ -72,8 +72,8 @@ uv run python scripts/ingest.py
 
 ## Итерация 3 — Chunking
 
-- [ ] `app/chunker.py` — нарезка по абзацам, max 400, overlap 50
-- [ ] Выход: `data/processed/chunks.jsonl`
+- [x] `app/chunker.py` — нарезка по абзацам, max 400, overlap 50
+- [x] Выход: `data/processed/chunks.jsonl`
 
 **Проверка:**
 ```bash
